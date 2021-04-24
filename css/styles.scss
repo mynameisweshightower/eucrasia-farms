@@ -1,29 +1,50 @@
+//  COLORS
+//  Use these variables for background or text color, where applicable
 $color-primary: #111;
 $color-secondary: #333;
 $color-pale: #888;
 $color-mid: #e6dc37;
+$color-mid-low: rgba(230, 220, 55, 0.2);
 $color-dark: #60106b;
 $color-black-transparent: rgba(0, 0, 0, 0.5);
+$color-darkest: #000;
+$color-lightest: #fff;
 
+//  FONTS
+//  Use these variables for font settings
 $body-font: 'Open Sans', sans-serif;
-$header-font: 'Lobster', cursive;
+$header-font: 'Old Standard TT', serif;
+
+/*  --- END VARIABLES --- */
 
 body {
+  background-color: $color-secondary;
+  color: $color-lightest;
   font-family: $body-font;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.italic {
+  font-style: italic;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h5,
+h6 {
   font-family: $header-font;
 }
 
 h1 {
-  color:$color-pale;
+  color: $color-pale;
 }
 
 h2 {
-  color: $color-primary;
+  color: $color-mid;
 }
 
 header {
@@ -33,36 +54,65 @@ header {
 }
 
 .site-footer {
-  background-image: linear-gradient($color-pale, white);
+  // background-image: linear-gradient($color-pale, white);
+  background-color: $color-darkest;
   padding: 20px 0;
+
+  .foot-logo {
+    max-width: 100px;
+  }
+
+  .btn-social-icon {
+    color: $color-lightest;
+
+    > :first-child {
+      font-size: 1em;
+      line-height: 1;
+    }
+  }
 }
 
 .jumbotron {
   margin: 0;
   padding: 30px;
-  background-image: linear-gradient(
-    to right,
-    $color-secondary,
-    $color-primary,
-    $color-dark
-  );
-  background-image:radial-gradient($color-primary, $color-secondary);
+  background-image: radial-gradient($color-primary, $color-secondary);
   color: white;
 
-  .logo
-  {
-    max-width:180px;
+  .logo {
+    max-width: 180px;
   }
 }
 
 .row-content {
   padding: 50px 0;
-  border-bottom: 1px ridge;
+  border-bottom: 1px $color-mid ridge;
   min-height: 200px;
 }
 
 .navbar-dark {
   background-color: $color-mid;
+
+  .navbar-nav {
+    .nav-link {
+      color: $color-secondary;
+    }
+  }
+}
+
+.navbar-nav {
+  .nav-link {
+    transition: all 0.3s;
+
+    &:hover {
+      background: $color-secondary;
+      color: $color-mid;
+    }
+  }
+
+  .nav-item.active {
+    background: $color-secondary;
+    color: $color-mid;
+  }
 }
 
 .tab-content {
@@ -92,10 +142,62 @@ a:hover {
   z-index: 100;
 }
 
+.card {
+  background: $color-mid-low;
+}
+
+.card-header
+{
+  background:$color-mid;
+  color:$color-primary;
+}
+
+hr {
+  border-color: $color-mid;
+}
+
+.btn-check-input {
+  background: transparent;
+  border: 1px solid $color-pale;
+  color: $color-lightest;
+
+  &:hover {
+    background: $color-mid-low;
+    color: $color-lightest;
+  }
+}
+
+.btn-mid
+{
+  background:$color-mid;
+  color:$color-darkest;
+}
+
+.form-check-input {
+  height: 0;
+  width: 0;
+
+  &:checked {
+    + label {
+      background: $color-mid;
+      color: #000;
+    }
+  }
+}
+
+.breadcrumb {
+  background-color: transparent;
+}
+
+.modal-header
+{
+  color:$color-primary;
+}
+
 /* ! extra nonsense */
 ::selection {
-  background-color: #60106b;
-  color: $color-pale;
+  background-color: $color-mid;
+  color: $color-darkest;
 }
 
 div {

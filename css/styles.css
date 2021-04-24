@@ -122,6 +122,9 @@ hr {
 .modal-header {
   color: #111; }
 
+.navbar-toggler {
+  background: #333; }
+
 /* ! extra nonsense */
 ::selection {
   background-color: #e6dc37;

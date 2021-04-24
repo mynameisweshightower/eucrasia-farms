@@ -194,6 +194,11 @@ hr {
   color:$color-primary;
 }
 
+.navbar-toggler
+{
+  background:$color-secondary;
+}
+
 /* ! extra nonsense */
 ::selection {
   background-color: $color-mid;
